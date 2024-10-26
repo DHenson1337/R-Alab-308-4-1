@@ -5,7 +5,8 @@ const rawData = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\
 // Split the raw data into an array of rows  (.split ONLY Works on Strings)
 
 const rows = rawData.split('\n'); //Splits all the Data into Rows from the `\n`
-const headers = rows[0].split(','); //Creates the header keys, where I want to store my info
+console.log(rows);
+// const headers = rows[0].split(','); //Creates the header keys, where I want to store my info
 
 //The Array all the information will be stored
 const table = [];
@@ -13,7 +14,7 @@ const table = [];
 //Lets me loop through the max number of rows and splits them!
 let rowIndex = 1; //It's 1 so I can skip my headers
 
-while (rowIndex < rows.length) {
+/* while (rowIndex < rows.length) {
 const currentRow = rows[rowIndex].split(',') //Splits the row
 const obj = {}; // creates and object for my row
 let headerIndex = 0; //counter, to assign correct information to each header
@@ -28,4 +29,4 @@ let headerIndex = 0; //counter, to assign correct information to each header
  rowIndex++;
 }
 
-console.log(table);
+console.log(table); */
