@@ -1,11 +1,17 @@
 // The raw data that I want to transform into a formmated array of objects
-const rawData = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
+const rawData = "ID,Name,Occupation,Age,Part2\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
 // console.log(rawData);
 
 // Split the raw data into an array of rows  (.split ONLY Works on Strings)
 
 const rows = rawData.split('\n'); //Splits all the Data into Rows from the `\n`
 const headers = rows[0].split(','); //Creates the header keys, where I want to store my info
+
+//Part 3: Turning my headers into lowercase.
+for (let x = 0; x < headers.length; x++){
+    headers[x] = headers[x].toLowerCase();
+}
+
 
 //The Array all the information will be stored
 const table = [];
