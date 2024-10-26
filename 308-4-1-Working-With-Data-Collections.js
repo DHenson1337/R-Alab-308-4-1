@@ -1,5 +1,5 @@
 // The raw data that I want to transform into a formmated array of objects
-const rawData = "ID,Name,Occupation,Age,Part2\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
+const rawData = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
 // console.log(rawData);
 
 // Split the raw data into an array of rows  (.split ONLY Works on Strings)
@@ -32,9 +32,22 @@ let headerIndex = 0; //counter, to assign correct information to each header
   headerIndex++;
  }
 
- table.push(obj); // Adds the object to the table
+ table.push(obj); // Adds the object to the table array
  rowIndex++;
 }
+
+console.log(table); //The Completed sort form of the data
+
+console.log("=========================Part 4==========================================");
+const removeLast = table.pop(); //Goodbye Bill, the doctor needs no assistance. Maybe you can become a science guy
+// console.log(table);
+
+const addIndex1 = { id: "48", name: "Barry", occupation: "Runner", age: "25" };
+table.splice(1,0, addIndex1) //Adds the new object to the front of the table array
+// console.log(table);
+
+const addLast = { id: "7", name: "Bilbo", occupation: "None", age: "111" };
+table.push(addLast) //Adds the new object to the end of the table array.
 
 console.log(table);
 
