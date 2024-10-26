@@ -4,8 +4,39 @@ const rawData = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\
 
 // Split the raw data into an array of rows  (.split ONLY Works on Strings)
 
-const rows = rawData.split('\n'); //Splits all the Data into Rows
+const rows = rawData.split('\n'); //Splits all the Data into Rows from the `\n`
 const headers = rows[0].split(','); //Creates the header keys, where I want to store my info
+
+//The Array all the information will be stored
+const table = [];
+
+//Lets me loop through the max number of rows and splits them!
+let rowIndex = 1; //It's 1 so I can skip my headers
+
+
+//My Row Splitter
+while (rowIndex < rows.length) {
+const currentRow = rows[rowIndex].split(',') //Splits the row according to index position
+const obj = {}; // creates and object for my row
+let headerIndex = 0; //counter, to assign correct information to each header
+
+//How i'll add the information to the headers (I don't leave till the row is done)
+ while (headerIndex < headers.length){ // for current data cycles 0 - 3
+  obj[headers[headerIndex]] = currentRow[headerIndex];  // Adds each item to apporpriate header(key) for a row
+  headerIndex++;
+ }
+
+ table.push(obj); // Adds the object to the table
+ rowIndex++;
+}
+
+console.log(table);
+
+
+
+// =====================Rough Draft for Part 1 =============================
+
+/*
 const rows1 = rows[1].split(','); //Splits each row by the, so I can assign to each key.
 const rows2 = rows[2].split(',');
 const rows3 = rows[3].split(',');
@@ -66,3 +97,5 @@ const table = [convertRow1,convertRow2,convertRow3, convertRow4];
 console.log(table);
 
 // Gonna attempt to clean this so it looks nicer but leaving it commented to show my work!
+
+*/
