@@ -68,13 +68,13 @@ console.log("==================Part 5=======================================");
 
 
 // Extract headers and join them with (",") delimeter
-const keyHeaders = Object.keys(table[0]).join('\n');
+const keyHeaders = Object.keys(table[0]).join(",");
 
 // Create rows arrays by turning all the data (Excludings keys) into strings
 const tableRows = table.map(obj => Object.values(obj).join(','));
 
 // Combine headers and rows
-const csv = [keyHeaders, ...tableRows].join(',');
+const csv = [keyHeaders, ...tableRows].join('\\n');
 
 console.log(csv);
 
