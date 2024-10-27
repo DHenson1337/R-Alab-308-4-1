@@ -63,6 +63,32 @@ for (let i = 0; i < table.length; i++) {
 let averageAge = totalAge/ageCount // The equation for checking the average age
 console.log(averageAge, " Is the average age of this table");
 
+console.log("==================Part 5=======================================");
+//Turning my array back into a csv. . . like how?
+
+
+// Extract headers and join them with (",") delimeter
+const keyHeaders = Object.keys(table[0]).join('\n');
+
+// Create rows arrays by turning all the data (Excludings keys) into strings
+const tableRows = table.map(obj => Object.values(obj).join(','));
+
+// Combine headers and rows
+const csv = [keyHeaders, ...tableRows].join(',');
+
+console.log(csv);
+
+
+
+
+//Messy way of turning it all back into a CSV  (Come back to it if ther is time)
+/* const convertToString = table.map(table => table.id);
+const idString = convertToString.join(`,`);
+console.log(idString); 
+
+// This way didn't so what I want, it just converted the items in the Object to a string :< )
+ */
+
 
 // =====================Rough Draft for Part 1 =============================
 
