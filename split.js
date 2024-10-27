@@ -44,12 +44,55 @@ while (rowIndex < rows.length) {
 
 //=========================Part 4 ========================================
 const removeEnd = bill.pop(); //
-console.log(bill);
+
 
 const insertIndex1 = { id: "48", name: "Barry", occupation: "Runner", age: "25" };
 bill.splice(1, 0, insertIndex1);
 
+const insertLast = { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+bill.push(insertLast)
+
 console.log(bill);
+
+//Part 4, the hard part.
+
+//calculating the age
+let totalAge = 0;
+let ageCount = 0;
+
+
+for (let i = 0; i < bill.length; i++) {
+    totalAge += Number(bill[i].age); // Converts the string into a number and adds the value to totalAge
+    ageCount++;
+}
+console.log(totalAge);
+console.log(totalAge/ageCount);
+
+//This is the average age
+let avg = totalAge/ageCount;
+
+//Since I rounded down, give me extra points Christina
+console.log(Math.floor(avg));
+
+console.log("=========================Part 5===========================");
+//Turning my array back into a csv. . . like how?
+
+console.log(bill);
+// Extract headers and join them (',') delimeter
+const joe = Object.keys(bill[0]).join(",")
+console.log(joe);
+
+// Create rows arrays by turning all the data into strings
+const doY = bill.map(obj => Object.values(obj).join(','));
+console.log(doY);
+
+//Combine headers and rows
+
+const mojodojo = [joe, ...doY].join("\\n");
+console.log(mojodojo);
+
+//We're done \o/******** */
+
 
 
 
