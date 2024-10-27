@@ -1,7 +1,7 @@
 // The raw data that I want to transform into a formmated array of objects
-const rawData = "ID,Name,Occupation,Age,Gender\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
+const rawData = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
 // console.log(rawData);
-
+console.log(`===================Parts 1 - 3 =======================`);
 // Split the raw data into an array of rows  (.split ONLY Works on Strings)
 
 const rows = rawData.split('\n'); //Splits all the Data into Rows from the `\n`
@@ -49,7 +49,19 @@ table.splice(1,0, addIndex1) //Adds the new object to the front of the table arr
 const addLast = { id: "7", name: "Bilbo", occupation: "None", age: "111" };
 table.push(addLast) //Adds the new object to the end of the table array.
 
-console.log(table);
+ console.log(table);
+
+//calculating the age
+let totalAge = 0;
+let ageCount = 0;
+
+for (let i = 0; i < table.length; i++) {
+  totalAge += Number(table[i].age); // Converts the string into a number and adds the value to totalAge
+  ageCount++
+}
+// console.log(totalAge); //Prints the total age
+let averageAge = totalAge/ageCount // The equation for checking the average age
+console.log(averageAge, " Is the average age of this table");
 
 
 // =====================Rough Draft for Part 1 =============================
